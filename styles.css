@@ -80,21 +80,27 @@ body {
   display: flex;
   gap: 16px;
   justify-content: center;
+  flex-wrap: wrap; /* Permite que os botões se ajustem ao tamanho da tela */
   border-radius: 0 0 10px 10px; /* Combina com a borda dos stories */
+  margin: 0 10px; /* Adiciona espaçamento nas laterais */
 }
 
 .channel-button {
   background-color: #078919; /* Cor verde WhatsApp */
   color: white;
   border: none;
-  padding: 12px 24px;
-  font-size: 16px;
+  padding: 12px 10px;
+  font-size: 12px;
   border-radius: 12px;
   cursor: pointer;
   text-transform: uppercase;
   font-weight: bold;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   transition: all 0.3s ease-in-out;
+  min-width: 100px; /* Garante que o botão tenha uma largura mínima */
+  max-width: 100%; /* O botão pode ocupar a largura máxima disponível */
+  white-space: nowrap; /* Garante que o texto não quebre para nova linha */
+  box-sizing: border-box; /* Garante que padding não afete a largura total */
 }
 
 .channel-button:hover {
