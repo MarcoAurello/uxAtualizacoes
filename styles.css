@@ -78,19 +78,23 @@ body {
 /* Canais */
 .channels-container {
   display: flex;
-  gap: 16px;
-  justify-content: center;
-  flex-wrap: wrap; /* Permite que os botões se ajustem ao tamanho da tela */
-  border-radius: 0 0 10px 10px; /* Combina com a borda dos stories */
-  margin: 0 10px; /* Adiciona espaçamento nas laterais */
+  flex-wrap: nowrap; /* Garante que os botões fiquem sempre na mesma linha */
+  overflow-x: auto; /* Permite a rolagem horizontal quando necessário */
+  gap: 16px; /* Espaçamento entre os botões */
+  padding: 16px;
+  background-color: #1e1e1e;
+  border-radius: 10px;
+  justify-content: flex-start; /* Alinha os botões à esquerda */
+    overflow-x: hidden; /* Evita scroll horizontal indesejado */
 }
 
+/* Botões */
 .channel-button {
   background-color: #078919; /* Cor verde WhatsApp */
   color: white;
   border: none;
-  padding: 12px 10px;
-  font-size: 12px;
+  padding: 12px 15px;
+  font-size: 10px;
   border-radius: 12px;
   cursor: pointer;
   text-transform: uppercase;
@@ -98,9 +102,9 @@ body {
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   transition: all 0.3s ease-in-out;
   min-width: 100px; /* Garante que o botão tenha uma largura mínima */
-  max-width: 100%; /* O botão pode ocupar a largura máxima disponível */
   white-space: nowrap; /* Garante que o texto não quebre para nova linha */
   box-sizing: border-box; /* Garante que padding não afete a largura total */
+  margin-right: 10px; /* Adiciona espaçamento entre os botões */
 }
 
 .channel-button:hover {
