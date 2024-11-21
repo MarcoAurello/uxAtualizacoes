@@ -211,3 +211,25 @@ html, body {
         box-shadow: 0 2px 5px rgba(0,0,0,0.1); /* Adiciona sombra para destacar o título */
     }
 
+/* Definindo a animação de fade-in */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.story {
+  opacity: 0; /* Começa invisível */
+  transform: translateY(20px); /* Começa com um pequeno deslocamento */
+  transition: opacity 0.5s ease-out, transform 0.5s ease-out; /* Animação suave */
+}
+
+.story.visible {
+  opacity: 1; /* Quando a classe 'visible' é adicionada, o story aparece */
+  transform: translateY(0); /* Anima o deslocamento */
+}

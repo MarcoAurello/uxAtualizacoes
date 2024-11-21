@@ -50,3 +50,27 @@ verticalScrollContainer.addEventListener('touchmove', (e) => {
   const walk = (x - startXVertical) * 2; // Velocidade do scroll horizontal
   verticalScrollContainer.scrollLeft = scrollLeftVertical - walk;
 });
+
+// Função para inicializar o Intersection Observer
+function initIntersectionObserver() {
+  const stories = document.querySelectorAll('.story');
+
+  const observer = new IntersectionObserver((entries, observer) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible'); // Adiciona a classe 'visible' quando o story entra na tela
+        observer.unobserve(entry.target); // Para de observar o story após ele entrar
+      }
+    });
+  }, {
+    threshold: 0.5 // Ativa a animação quando 50% do story está visível
+  });
+
+  stories.forEach(story => {
+    observer.observe(story); // Observa todos os stories
+  });
+}
+
+// Inicializa o observer ao carregar a página
+window.addEventListener('load', initIntersectionObserver);
+
