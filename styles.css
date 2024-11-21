@@ -200,3 +200,14 @@ html, body {
 .container {
   padding: 0 16px;
 }
+ .sticky-header {
+        position: sticky;
+        top: 0;
+        background-color: black;
+        padding: 10px;
+        font-size: 12px;
+        font-weight: bold;
+        z-index: 10; /* Garante que o título fique sobre os outros elementos ao rolar */
+        box-shadow: 0 2px 5px rgba(0,0,0,0.1); /* Adiciona sombra para destacar o título */
+    }
+
